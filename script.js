@@ -161,14 +161,12 @@ function calculateStats(correctChars, totalTyped) {
     }
 
     // Accuracy Calculation
-    let accuracy = 0;
-    if (totalTyped > 0) {
-        accuracy = Math.round(((totalTyped - currentErrors) / totalTyped) * 100);
-    } else {
-        accuracy = 100;
-    }
-    accuracyDisplay.innerText = accuracy;
-}
+   def calculate_accuracy(correct, total):
+    if total == 0:
+        return 0.0 # Avoid division by zero
+    
+    accuracy = (correct / total) * 100
+    return round(accuracy, 2)
 
 
 // 5. End Game
@@ -224,4 +222,5 @@ function resetGame() {
     gameArea.style.display = 'none';
     setupArea.style.display = 'block';
     usernameInput.value = '';
+
 }
